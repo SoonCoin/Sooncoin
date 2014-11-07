@@ -23,10 +23,10 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         // The message start string is designed to be unlikely to occur in normal data.
-        pchMessageStart[0] = 0xB4;
-        pchMessageStart[1] = 0xB4;
-        pchMessageStart[2] = 0xB4;
-        pchMessageStart[3] = 0xB4;
+        pchMessageStart[0] = 0x01;
+        pchMessageStart[1] = 0x02;
+        pchMessageStart[2] = 0x01;
+        pchMessageStart[3] = 0x04;
         nDefaultPort = 22221;
         nRPCPort = 22222;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
@@ -46,9 +46,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1415190018;
+        genesis.nTime    = 1415359139;
         genesis.nBits    = 0x1e0fffff;
-        genesis.nNonce   = 23626;
+        genesis.nNonce   = 2428270;
         
         //// debug print
         hashGenesisBlock = genesis.GetHash();
@@ -63,7 +63,7 @@ public:
         genesis.print();
         
         
-        assert(hashGenesisBlock == uint256("0x00000b8f25f4d232b4c4fd3970f39805cb226f9413f2df39941c1562f096ca36"));
+        assert(hashGenesisBlock == uint256("0x00000e6f88a9acb66549d3b18610b602f764b7aa99e5c78e5c5ec64697b3c3d8"));
         assert(genesis.hashMerkleRoot == uint256("0xce5ffef689dec9159eec765ec09032cec048c7f2b18c8e13f43bfed3d562825e"));
 
         vSeeds.push_back(CDNSSeedData("84.24.19.223", "84.24.19.223"));
