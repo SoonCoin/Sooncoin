@@ -1267,8 +1267,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 }
 
 static const int64 nTargetTimespan = 240; // 4 minutes
-static const int64 nTargetSpacing = 4; // 4 seconds
-static const int64 nInterval = nTargetTimespan / nTargetSpacing; // 60 blocks
+static const int64 nTargetSpacing = 120; // 2 minutes
+static const int64 nInterval = nTargetTimespan / nTargetSpacing; // 2 blocks
 
 static const int64 nAveragingInterval = nInterval * 10; // 20 blocks
 static const int64 nAveragingTargetTimespan = nAveragingInterval * nTargetSpacing; // 20 minutes
