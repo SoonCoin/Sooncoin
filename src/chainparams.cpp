@@ -59,10 +59,10 @@ public:
         //    hashGenesisBlock = genesis.GetHash();
         //}
 
-        //printf("%s\n", hashGenesisBlock.ToString().c_str());
-        //printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        //printf("%x\n", bnProofOfWorkLimit.GetCompact());
-        //genesis.print();
+        printf("%s\n", hashGenesisBlock.ToString().c_str());
+        printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
+        printf("%x\n", bnProofOfWorkLimit.GetCompact());
+        genesis.print();
 
 
         assert(hashGenesisBlock == uint256("0x00000e6f88a9acb66549d3b18610b602f764b7aa99e5c78e5c5ec64697b3c3d8"));
@@ -148,7 +148,7 @@ public:
     }
     virtual Network NetworkID() const { return CChainParams::TESTNET; }
 };
-//static CTestNetParams testNetParams;
+static CTestNetParams testNetParams;
 
 
 //
@@ -172,10 +172,10 @@ public:
 
         // debug print
         hashGenesisBlock = genesis.GetHash();
-        while (hashGenesisBlock > bnProofOfWorkLimit.getuint256()){
-           if (++genesis.nNonce==0) break;
-            hashGenesisBlock = genesis.GetHash();
-        }
+        //while (hashGenesisBlock > bnProofOfWorkLimit.getuint256()){
+        //   if (++genesis.nNonce==0) break;
+        //    hashGenesisBlock = genesis.GetHash();
+        //}
 
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
@@ -193,7 +193,7 @@ public:
     virtual bool RequireRPCPassword() const { return false; }
     virtual Network NetworkID() const { return CChainParams::REGTEST; }
 };
-//static CRegTestParams regTestParams;
+static CRegTestParams regTestParams;
 
 static CChainParams *pCurrentParams = &mainParams;
 
@@ -206,12 +206,12 @@ void SelectParams(CChainParams::Network network) {
         case CChainParams::MAIN:
             pCurrentParams = &mainParams;
             break;
-        //case CChainParams::TESTNET:
-        //    pCurrentParams = &testNetParams;
-        //    break;
-        //case CChainParams::REGTEST:
-        //    pCurrentParams = &regTestParams;
-        //    break;
+        case CChainParams::TESTNET:
+            pCurrentParams = &testNetParams;
+            break;
+        case CChainParams::REGTEST:
+            pCurrentParams = &regTestParams;
+            break;
         default:
             assert(false && "Unimplemented network");
             return;
