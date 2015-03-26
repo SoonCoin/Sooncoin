@@ -1330,8 +1330,8 @@ unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const 
         return nProofOfWorkLimit;
 
 	// Start at difficulty of 1
-//    if (pindexLast->nHeight+1 < nAveragingInterval)
-//        return bnStartingDifficulty.GetCompact();
+    if (pindexLast->nHeight+1 < nAveragingInterval)
+        return nProofOfWorkLimit;
 
     // Only change once per interval
     if ((pindexLast->nHeight+1) % nInterval != 0)
