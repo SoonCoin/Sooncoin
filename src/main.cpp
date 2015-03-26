@@ -1323,15 +1323,15 @@ static const int64 nMaxActualTimespan = nAveragingTargetTimespan * (100 + nMaxAd
 unsigned int static GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
     unsigned int nProofOfWorkLimit = Params().ProofOfWorkLimit().GetCompact();
-	CBigNum bnStartingDifficulty = CBigNum(~uint256(0) >> 30);
+//	CBigNum bnStartingDifficulty = CBigNum(~uint256(0) >> 30);
 	
     // Genesis block
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
 	// Start at difficulty of 1
-    if (pindexLast->nHeight+1 < nAveragingInterval)
-        return bnStartingDifficulty.GetCompact();
+//    if (pindexLast->nHeight+1 < nAveragingInterval)
+//        return bnStartingDifficulty.GetCompact();
 
     // Only change once per interval
     if ((pindexLast->nHeight+1) % nInterval != 0)
