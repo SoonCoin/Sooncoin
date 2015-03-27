@@ -70,7 +70,7 @@ public:
 
         vSeeds.push_back(CDNSSeedData("84.24.19.223", "84.24.19.223"));
         vSeeds.push_back(CDNSSeedData("93.157.4.11", "93.157.4.11"));
-        vSeeds.push_back(CDNSSeedData("115.70.82.218", "115.70.82.218"));
+        vSeeds.push_back(CDNSSeedData("91.121.6.19", "91.121.6.19"));
 
         base58Prefixes[PUBKEY_ADDRESS] = 63;
         base58Prefixes[SCRIPT_ADDRESS] = 30;
